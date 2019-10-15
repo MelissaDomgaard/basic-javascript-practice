@@ -1,8 +1,10 @@
 h1 {
     color: blueviolet;
 }
+
 main {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 2 rem;
+    
 }
