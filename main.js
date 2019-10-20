@@ -1,5 +1,5 @@
 import { films } from './assets/films.js'
-import { people } from '/assets/people.js'
+import { people } from './assets/people.js'
 
 console.log('I am JavaScript running in the page of the paqe')
 
@@ -20,10 +20,9 @@ films.forEach(function (film) {
 
     mainArea.appendChild(filmDiv)
 
-});  
+});
 
-/*
-people.forEach(function (people) {
+people.forEach((person) => {
     let personDiv = document.createElement('div')
     let name = document.createElement('h1')
     let gender = document.createElement('p')
@@ -33,25 +32,21 @@ people.forEach(function (people) {
 
     name.textContent = person.name
     gender.textContent = person.gender
-    pic.src = "https://starwars-visualguide.com/assets/img/characters/${charNum}.jpg"
-
+    pic.src = `https://starwars-visualguide.com/assets/img/characters/${charNum}.jpg`
 
     personDiv.appendChild(name)
     personDiv.appendChild(gender)
     personDiv.appendChild(pic)
 
-    mainArea.append(personDiv)
+    mainArea.appendChild(personDiv)
+})
 
-}
-
-    function getCharNumber(charURL) {
-        let end = charURL.lastInderxOf('/')
-        let charID = charURL.substring(end - 2, end)
-        if (charID.lastInderxOf('/') !== -1) {
-            return charID.slice(1, 2)
-        } else {
-            return charID
-        }
+function getCharNumber(charURL) {
+    let end = charURL.lastIndexOf('/')
+    let charID = charURL.substring(end -2, end)
+    if (charID.indexOf('/') !== -1) {
+        return charID.slice(1, 2)
+    } else {
+        return charID
     }
-
-} */
+}
